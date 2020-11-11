@@ -5,7 +5,7 @@ A TDD and Encapsulation pracitce to implement classes and their responsibility.
 ```
 As a user
 So that I can write down my thoughts
-I want to be able to add entry to my secret diary
+I want to be able to add an entry to my secret diary
 ```
 
 ```
