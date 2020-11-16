@@ -34,7 +34,7 @@ RSpec.describe SecretDiary do
       secret_diary = SecretDiary.new
       diary1 = "This is my first piece"
       diary2 = "This is my second piece"
-      expect(secret_diary.get_entries).to eq("You need to unlock!")
+      expect{ secret_diary.get_entries }.to raise_error("You need to unlock!")
     end
   end
 end

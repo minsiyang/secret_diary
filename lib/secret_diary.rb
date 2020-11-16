@@ -10,7 +10,7 @@ class SecretDiary
   end
 
   def get_entries
-    return "You need to unlock!" if @locked
+    raise "You need to unlock!" if @locked
     @entries
   end
 
