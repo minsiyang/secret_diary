@@ -4,9 +4,9 @@ class SecretDiary
     @locked = true
   end
 
-  def add_entry(diary)
+  def add_entry(title, content)
     raise "You need to unlock!" if @locked
-    @entries << diary
+    @entries << { title: title, content: content }
   end
 
   def get_entries
