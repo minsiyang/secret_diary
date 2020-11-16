@@ -9,6 +9,10 @@ RSpec.describe SecretDiary do
       entries = [diary]
       secret_diary.unlock
       expect(secret_diary.add_entry(diary)).to eq(entries)
+
+      another_diary = "Second entry"
+      secret_diary.lock
+      expect{ secret_diary.add_entry(another_diary) }.to raise_error("You need to unlock!")
     end
 
     it "get added entries" do
