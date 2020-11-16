@@ -5,14 +5,14 @@ RSpec.describe SecretDiary do
   context "user has to unlock the diary in order to use" do
     it "adds the diary entry to an array" do
       secret_diary = SecretDiary.new
-      diary = "This is my first piece"
-      entries = [diary]
+      diary1 = "This is my first piece"
+      entries = [diary1]
       secret_diary.unlock
-      expect(secret_diary.add_entry(diary)).to eq(entries)
+      expect(secret_diary.add_entry(diary1)).to eq(entries)
 
-      another_diary = "Second entry"
+      diary2 = "This is my second piece"
       secret_diary.lock
-      expect{ secret_diary.add_entry(another_diary) }.to raise_error("You need to unlock!")
+      expect{ secret_diary.add_entry(diary2) }.to raise_error("You need to unlock!")
     end
 
     it "get added entries" do
@@ -24,6 +24,9 @@ RSpec.describe SecretDiary do
       secret_diary.add_entry(diary2)
       entries = [diary1, diary2]
       expect(secret_diary.get_entries).to eq(entries)
+
+      secret_diary.lock
+      expect{ secret_diary.get_entries }.to raise_error("You need to unlock!")
     end
   end
 
