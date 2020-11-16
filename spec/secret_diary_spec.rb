@@ -27,7 +27,7 @@ RSpec.describe SecretDiary do
     it "could not add an diary entry" do
       secret_diary = SecretDiary.new
       diary = "This is my first piece"
-      expect(secret_diary.add_entry(diary)).to eq("You need to unlock!")
+      expect{ secret_diary.add_entry(diary) }.to raise_error("You need to unlock!")
     end
 
     it "could not get added entries" do

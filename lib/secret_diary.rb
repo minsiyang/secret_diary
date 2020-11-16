@@ -5,7 +5,7 @@ class SecretDiary
   end
 
   def add_entry(diary)
-    return "You need to unlock!" if @locked
+    raise "You need to unlock!" if @locked
     @entries << diary
   end
 
