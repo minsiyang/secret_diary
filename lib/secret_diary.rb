@@ -3,7 +3,6 @@ class SecretDiary
 
   def initialize(diary = Diary.new)
     @diary = diary
-    @entries = []
     @locked = true
   end
 
@@ -14,7 +13,7 @@ class SecretDiary
 
   def get_entries
     raise "You need to unlock!" if @locked
-    @entries
+    diary.view
   end
 
   def unlock
