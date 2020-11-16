@@ -1,12 +1,15 @@
 class SecretDiary
-  def initialize
+  attr_reader :diary
+
+  def initialize(diary = Diary.new)
+    @diary = diary
     @entries = []
     @locked = true
   end
 
   def add_entry(title, content)
     raise "You need to unlock!" if @locked
-    @entries << { title: title, content: content }
+    diary.add(title, content)
   end
 
   def get_entries
