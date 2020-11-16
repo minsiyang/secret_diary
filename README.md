@@ -25,3 +25,12 @@ As a user
 So that I can keep my diary secret
 I want to be able to lock my secret diary
 ```
+
+|   **Class**               |  **Method**  |
+| :--                       |  :--         |
+|  SecretDiary(in charge of security of access, colaborting with Diary class) | .unlock  |
+|                                                                          | .lock    |
+|                                                                          | .add_entry(title, content) |
+|                                                                          | .get_entries |
+|  Diary(in charge of all diary items)  | .add(title, content)  |
+|                                       | .view                 |         
